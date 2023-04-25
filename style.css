@@ -27,6 +27,7 @@
     display: grid;
     place-items: center;
     min-height: 100svh;
+    background-color: hsl(225, 100%, 94%);
 
     background-image: url(images/pattern-background-desktop.svg);
     background-size: cover;
