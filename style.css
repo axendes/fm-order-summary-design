@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+/* -------------------------------------------------------------Default */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Display", "Arial", "sans-serif";
+    outline: none;
+}
+
+.body {
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+
+    background-image: url(images/pattern-background-desktop.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* -------------------------------------------------------------Main */
+
+.main {
+    display: grid;
+    grid-template-columns: min-content;
+    margin-block: 3rem;
+
+    border-radius: 1.25rem;
+    box-shadow: 0 2rem 50px hsla(245, 75%, 52%, 0.1);
+
+    overflow: hidden;
+}
+
+/* -------------------------------------------------------------Hero Image */
+
+.picture__img {
+    display: block;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+/* -------------------------------------------------------------Content */
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 3rem;
+
+    text-align: center;
+
+    background-color: var(--white);
+
+    user-select: none;
+}
+
+.content__desc {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.content__header {
+    font-size: 1.75rem;
+    font-weight: 900;
+
+    color: var(--dark-blue);
+}
+
+.content__p {
+    font-size: 1rem;
+    line-height: 1.5;
+
+    color: var(--desaturated-blue);
+}
+
+.content__plan-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.65rem 1.5rem;
+
+    border-radius: .875rem;
+    background-color: var(--very-pale-blue);
+}
+
+.content__outer-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.content__music-icon {
+    display: block;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.content__inner-plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .3rem;
+}
+
+.content__plan {
+    font-weight: 900;
+    font-size: 1rem;
+
+    color: var(--dark-blue);
+}
+
+.content__price {
+    font-size: 1.025rem;
+
+    color: var(--desaturated-blue);
+}
+
+.content__change-plan {
+    font-size: .875rem;
+    font-weight: 700;
+
+    color: var(--bright-blue);
+
+    transition: opacity 200ms, text-decoration-color 200ms;
+}
+
+.content__change-plan:is(:hover, :focus-visible) {
+    opacity: .7;
+    text-decoration-color: transparent;
+}
+
+.content__proceed {
+    padding-block: 1rem;
+    margin-block: .75rem;
+
+    font-weight: 700;
+    font-size: .9rem;
+
+    border: none;
+    border-radius: .875rem;
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    box-shadow: 0 .875rem 30px hsla(245, 75%, 52%, 0.309);
+
+    cursor: pointer;
+    transition: opacity 200ms;
+}
+
+.content__proceed:is(:hover, :focus-visible) {
+    opacity: .7;
+}
+
+.content__cancel {
+    width: min-content;
+    place-self: center;
+
+    font-weight: 900;
+    font-size: .9rem;
+
+    border: none;
+    background-color: transparent;
+    color: var(--desaturated-blue);
+
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+.content__cancel:is(:hover, :focus-visible) {
+    color: var(--dark-blue);
+}
+
+/* -------------------------------------------------------------Media Queries */
+
+@media screen and (max-width: 500px) {
+    .picture__img {
+        width: 100%;
+    }
+
+    .content {
+        padding: 2rem 1.5rem;
+    }
+
+    .content__header {
+        font-size: 1.5rem;
+    }
+
+    .content__p {
+        padding-inline: .5rem;
+        font-size: .95rem;
+    }
+
+    .content__plan-wrapper {
+        gap: 3rem;
+        padding: 1.125rem 1rem;
+    }
+
+    .content__inner-plan {
+        gap: .125rem;
+    }
+
+    .content__plan {
+        font-size: .9rem;
+        white-space: nowrap;
+    }
+
+    .content__price {
+        font-size: .925rem;
+    }
+
+    .content__change-plan {
+        font-size: .8rem;
+    }
+
+    .content__proceed {
+        margin-block: .25rem;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------------Attribution */
+
+.attribution {
+    position: absolute;
+    inset: auto 0 1rem 0;
+
+    font-size: 1rem;
+    text-align: center;
+
+    color: var(--black);
+
+    cursor: default;
+}
+
+.attribution__link {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--black);
+
+    transition: color 200ms;
+}
+
+.attribution__link:hover {
+    color: var(--bright-blue);
+}
