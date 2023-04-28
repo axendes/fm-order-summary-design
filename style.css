@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
 
+/* -------------------------------------------------------------Variables */
+
 :root {
     --black: hsl(0, 0%, 0%);
     --white: hsl(0, 0%, 100%);
@@ -19,18 +21,20 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Red Hat Display", "Arial", "sans-serif";
+    font-family: "Red Hat Display", Arial, sans-serif;
     outline: none;
 }
 
 .body {
     display: grid;
     place-items: center;
-    min-height: 100svh;
+    min-height: 100vh;
 
-    background-image: url(images/pattern-background-desktop.svg);
-    background-size: cover;
-    background-position: center;
+    background: url(images/pattern-background-desktop.svg), var(--pale-blue);
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+
+    user-select: none;
 }
 
 /* -------------------------------------------------------------Main */
@@ -52,7 +56,6 @@
     display: block;
 
     pointer-events: none;
-    user-select: none;
 }
 
 /* -------------------------------------------------------------Content */
@@ -66,8 +69,6 @@
     text-align: center;
 
     background-color: var(--white);
-
-    user-select: none;
 }
 
 .content__desc {
@@ -111,7 +112,6 @@
     display: block;
 
     pointer-events: none;
-    user-select: none;
 }
 
 .content__inner-plan {
@@ -154,7 +154,7 @@
     margin-block: .75rem;
 
     font-weight: 700;
-    font-size: .9rem;
+    font-size: 1rem;
 
     border: none;
     border-radius: .875rem;
@@ -175,7 +175,7 @@
     place-self: center;
 
     font-weight: 900;
-    font-size: .9rem;
+    font-size: 1rem;
 
     border: none;
     background-color: transparent;
@@ -235,34 +235,4 @@
     .content__proceed {
         margin-block: .25rem;
     }
-
-    .attribution {
-        display: none;
-    }
-}
-
-/* -------------------------------------------------------------Attribution */
-
-.attribution {
-    position: absolute;
-    inset: auto 0 1rem 0;
-
-    font-size: 1rem;
-    text-align: center;
-
-    color: var(--black);
-
-    cursor: default;
-}
-
-.attribution__link {
-    text-decoration: none;
-    font-weight: 700;
-    color: var(--black);
-
-    transition: color 200ms;
-}
-
-.attribution__link:hover {
-    color: var(--bright-blue);
 }
